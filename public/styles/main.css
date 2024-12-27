@@ -1,0 +1,73 @@
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: url(../images/sky.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container {
+    background-color: black;
+    background: url(../images/umbrella.png);
+    background-size:contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem;
+    width: 40rem;
+    height: auto;
+    gap:3rem;
+    margin-top: 50px;
+}
+
+.umbrella-suggestion {
+    width: 40rem;
+    border: solid beige 2px;
+    border-radius: 5px;
+    height: auto;
+    padding: 5px;
+    text-align: center;
+    background-color: orange;
+    color: rgb(78, 78, 73);
+}
+
+#form{
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size:x-large;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: beige;
+}
+
+#user-input {
+    width: 20rem;
+    padding: 10px;
+    margin-bottom: 2rem;
+    background-color: orange;
+    border: none;
+    border-radius: 3px;
+    color: rgb(78, 78, 73);
+    font-weight:bolder;
+    font-size: large;
+}
+
+#submit {
+    width: 15rem;
+    padding: 8px;
+    background-color: orange;
+    font-size: larger;
+    border: none;
+    border-radius: 3px;
+    color: rgb(78, 78, 73);
+}

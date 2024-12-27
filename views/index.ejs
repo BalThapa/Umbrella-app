@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/main.css">
+    <title>Umbrella App</title>
+</head>
+<body>
+    <div class="main-container">
+        <div class="umbrella-suggestion">
+            <h1>
+                <%= Report %>
+            </h1>
+        </div>  
+        <form method="post" id="form">
+            <label for="city">City-Name</label>
+            <input type="text" id="user-input">
+            
+            <label for="date">Date</label>
+            <input type="date" id="user-input">
+            <div>
+                <input type="submit" id="submit" value="Submit">
+                <input type="reset" id="submit" value="Refresh">
+            </div>
+        </form>
+    </div>
+    
+</body>
+</html>
