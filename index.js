@@ -33,9 +33,12 @@ app.post("/rain-status", async (req, res)=>{
                 appid: APIKey,
             }
         })
-        res.render("index.ejs", {Report: JSON.stringify(result.data.weather) }
-        )
-       
+        if (result.data.rain == undefined) {
+            res.render("index.ejs", {Report: 'No umbrella Needed'})
+        } else {
+            res.render("index.ejs", {Report: 'Remember to bring your umbrella'})
+        }
+        //res.render("index.ejs", {Report: JSON.stringify(result.data.rain)})
     } catch (error) {
         res.render("index.ejs", {Report: JSON.stringify(error.response.data)})
     }
