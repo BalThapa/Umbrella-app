@@ -26,21 +26,35 @@ app.get("/", (req, res)=> {
 
 app.post("/rain-status", async (req, res)=>{
      const cityName = req.body.city_name;
+    const input_date = req.body.input_date;
+
+    console.log(input_date);
+
     try {
-        const result = await axios.get (API_URL + "/data/2.5/weather/", {
+        const result = await axios.get (API_URL + "/data/2.5/forecast/", {
             params:{
                 q: cityName, 
                 appid: APIKey,
             }
         })
-        if (result.data.rain == undefined) {
-            res.render("index.ejs", {Report: 'No umbrella Needed'})
-        } else {
-            res.render("index.ejs", {Report: 'Remember to bring your umbrella'})
-        }
-        //res.render("index.ejs", {Report: JSON.stringify(result.data.rain)})
+        // const date = result.data.list.map(item=>item.dt_txt) 
+        // console.log(date);
+        // if (date == input_date) {
+        //     res.render("index.ejs", {Report: 'date'})
+        // } else {
+        //     res.render("index.ejs", {Report: 'Remember to bring your umbrella'})
+        // }
+
+        // if (result.data.rain == undefined) {
+        //     res.render("index.ejs", {Report: 'No umbrella Needed'})
+        // } else {
+        //     res.render("index.ejs", {Report: 'Remember to bring your umbrella'})
+        // }
+        
+        res.render("index.ejs", {Report: JSON.stringify(result.data.list)})
+        console.log(result.data.main)
     } catch (error) {
-        res.render("index.ejs", {Report: JSON.stringify(error.response.data)})
+        res.render("index.ejs", { Report: JSON.stringify(error.response ? error.response.data : error.message) });
     }
 })
 
