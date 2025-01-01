@@ -12,6 +12,7 @@ body{
 }
 
 .main-container {
+    border: solid;
     background-color: black;
     background: url(../images/umbrella.png);
     background-size:contain;
